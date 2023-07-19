@@ -1,0 +1,15 @@
+Age: The age of the individual in years.
+
+BS Fast (Blood Sugar Fasting): The fasting blood glucose level measured in mmol/L or mg/dL.
+
+BS pp (Blood Sugar Postprandial): The postprandial (after meal) blood glucose level measured in mmol/L or mg/dL.
+
+Plasma R (Random Plasma Glucose): The random blood glucose level measured in mmol/L or mg/dL.
+
+Plasma F (Plasma Glucose Fasting): Another fasting blood glucose level, possibly a different measurement or source than BS Fast.
+
+HbA1c (Glycated Hemoglobin): The percentage of hemoglobin that has glucose bound to it, representing the average blood sugar level over the past 2-3 months.
+
+Type: This likely indicates the type of diabetes, with "Type1" representing Type 1 diabetes, and "Normal" representing individuals without diabetes or with normal blood glucose levels.
+
+Class: This could be a binary classification label, where "1" may indicate the presence of diabetes, and "0" may represent the absence of diabetes.
