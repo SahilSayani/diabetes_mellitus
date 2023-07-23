@@ -18,23 +18,52 @@ class Solution:
         return y_pred_loaded
     
     def diabetes_prediction(self):
-        pass
+        with open('l', 'rb') as file:
+            rf_model = pickle.load(file)
+        test = []
+        test.append(self.model1)
+        
+        y_pred_loaded = rf_model.predict(test)
+        return y_pred_loaded
+    
     def diabetes_type1(self):
-        pass
+        with open('', 'rb') as file:
+            rf_model = pickle.load(file)
+        test = []
+        test.append(self.model1)
+        
+        y_pred_loaded = rf_model.predict(test)
+        return y_pred_loaded
     def diabetes_type1_type2(self):
         with open('diabetes_type1_type2\diabetes_type1_type2.pkl', 'rb') as file:
             rf_model = pickle.load(file)
         test = []
         test.append(self.model1)
-        #X_test=[[54,	11.3,	130,	7.7,	6.3,	5.4,	33.0,	0]]
-        # Use the loaded model for inference
+        
         y_pred_loaded = rf_model.predict(test)
         return y_pred_loaded
+    
     def output(self):
+        #first layer
         pred1 = self.diabetes_dataset()
         pred2 = self.diabetes_prediction()
-        pred3 = self.diabetes_type1()
-        pred4 = self.diabetes_type1_type2()
+        # 0 -> no diabetes 1 -> pre-diabetes 2 -> diabetes
+        if(pred1==0 and pred2 ==0 ):
+            return 'The patient does not have diabetes and is healthy'
+        elif(pred1==1 and pred2==1):
+            return 'Patient has prediabetes and can get diabetes type 2 in the future'
+        elif(pred1==0 and pred2 ==1):
+            return 'Patient is normal but should take care '
+        elif(pred1==1 and pred2 ==0):
+            return 'Patient may have pre-diabetes'
+        else:
+            #second layer
+            pred3 = self.diabetes_type1()
+            pred4 = self.diabetes_type1_type2()
+
+
+        
+        
         
 
         #Main point how to determine which model gets what weight?
