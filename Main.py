@@ -74,9 +74,9 @@ class Solution:
         elif((pred1==0 or pred1==1) and  pred2==1):
             return 'Patient has pre-diabetes and can get diabetes type 2 in the future'
         
-       
-        
         else:
+            print("-------------------------xx--------------------------------")
+            print('patient likely has diabetes , more information is needed for confirmation')
             #second layer
             pred3 = self.diabetes_type1_type2()
             if (pred3==1):
@@ -124,7 +124,7 @@ def main():
         gender = int(input('enter your gender (0: female and 1: male): '))
         HighBp = int(input('(HighBp :1 else  enter:0): '))
         Physical_Activity = int(input('(if physical activity is done frequently enter: 1) else enter: 0: '))
-        General_Health = int(input('(if overall health is positive enter :1 )else enter : 0: '))
+        General_Health = int(input('( 1 = excellent 2 = very good 3 = good 4 = fair 5 = poor) : '))
         Difficulty_walking = int(input('(if you have difficulty walking enter : 1) else enter : 0: '))
         healthy_food = int(input('(if you eat healthy food like vegetable and fruits on a daily basis enter : 1) else enter : 0: '))
 
